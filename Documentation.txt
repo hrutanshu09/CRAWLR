@@ -1,0 +1,47 @@
+CRAWLR
+
+-Overview
+CRAWLR is a simple web crawler that fetches links from a web page, crawls those links up to a given depth, and scrapes some data (Table of Contents) from the pages. The crawled data is saved in CSV files and the content of the pages is also stored in a separate file. The program is run from the terminal, where the user provides the starting URL and the number of links to crawl.
+
+-Key Features
+1.Command-line inputs: Users provide the starting URL and depth (number of links) through the terminal.
+2.Crawling: The crawler collects links from the given webpage and follows them based on the depth specified by the user.
+3.Scraping: The script scrapes data from each page, especially the "Table of Contents" (if available).
+4.File outputs: Scraped data is saved in CSV files, and the entire textual content of each webpage is stored in a text file.
+
+-Libraries
+The script uses several Python libraries, which need to be installed if not already available:
+1.`requests`: Used for making HTTP requests to websites.
+2.`BeautifulSoup` from `bs4`: Used for parsing HTML and scraping data from the web pages.
+3.`argparse`: Used for handling command-line arguments.
+4.`csv`: Used for writing data into CSV files.
+5.`re`: Used for regular expressions to find links in the webpage.
+6.`tqdm`: Used to show a progress bar during crawling.
+7.`colorama`: Used to color the terminal output.
+
+-How to Install Dependencies
+Before running the script, you need to install the required libraries. You can do this using the following command:
+
+"pip install requests beautifulsoup4 argparse tqdm colorama"
+
+
+-How to Run the Script
+Once you have installed the necessary libraries, you can run the script using the following terminal command:
+
+"python crawler.py -u <URL> -d <DEPTH>"
+
+// `-u` or `--url`: The seed URL (starting point) for the crawler.
+//`-d` or `--depth`: The number of links the crawler should follow.
+
+For example:
+
+"python crawler.py -u https://en.wikipedia.org/wiki/Web_scraping -d 5"
+
+This will crawl the provided Wikipedia page and follow up to 5 links found on the page.
+
+-Files Generated
+1. url.txt: Stores the URLs that were crawled.
+2. output_data.csv: Contains the text content from the crawled pages.
+3. output_urls.txt: Stores the URLs and their associated scraped data.
+
+Use this script responsibly and do not misuse or exploit
